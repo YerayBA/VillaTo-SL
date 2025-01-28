@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VillaToñíSL.Resources.Pages.ProduccionPage">
+    
+    <VerticalStackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+        <Label Text="Fecha de la recogida" WidthRequest="300" TextColor="Black" />
+        <DatePicker x:Name="FechaCosecha" BackgroundColor="Honeydew " />
+
+        <Label Text="Kilos recogidos" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
+        <Entry x:Name="KilosRecogidos"  BackgroundColor="Honeydew" />
+
+        <Label Text="Número de árboles recogidos" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
+        <Entry x:Name="ArbolesRecogidos"  BackgroundColor="Honeydew"  />
+
+        <Label Text="Número de cajas entregadas" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
+        <Entry x:Name="CajasEntregadas"  BackgroundColor="Honeydew"  />
+
+        <Label Text="Precio kg vendido" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="PrecioKgVendido"  BackgroundColor="Honeydew"  />
+
+        <Button Text="Guardar producción." VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnGuardarProduccionClicked" />
+
+        <Grid x:Name="DatosGrid" IsVisible="True" Padding="10" BackgroundColor="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Text="Fecha de la recogida" Grid.Column="0" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center" />
+            <Label x:Name="FechaCosechaLabel" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" />
+
+            <Label Text="Kilos recogidos" Grid.Column="1" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center"/>
+            <Label x:Name="KilosRecogidosLabel" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" />
+
+            <Label Text="Árboles recogidos" Grid.Column="2" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center" />
+            <Label x:Name="ArbolesRecogidosLabel" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" />
+
+            <Label Text="Cajas entregadas" Grid.Column="3" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center"/>
+            <Label x:Name="CajasEntregadasLabel" Grid.Column="3" Grid.Row="1" HorizontalTextAlignment="Center" />
+
+            <Label Text="Precio kg vendido"  Grid.Column="4" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center"/>
+            <Label x:Name="PrecioKgVendidoLabel" Grid.Column="4" Grid.Row="1" HorizontalTextAlignment="Center"/>
+        </Grid>
+        <Button Text="Exportar datos a Excel" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGreen" TextColor="Black" Clicked="ExportarDatosExcel" />
+    </VerticalStackLayout>
+</ContentPage>

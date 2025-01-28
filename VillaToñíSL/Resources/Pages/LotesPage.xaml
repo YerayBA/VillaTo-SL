@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VillaToñíSL.Resources.Pages.LotesPage"
+            Title="Lotes">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Gestión de Lotes" 
+                   FontSize="24" 
+                   HorizontalOptions="Center" />
+            <!-- Contenido adicional para la gestión de lotes -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

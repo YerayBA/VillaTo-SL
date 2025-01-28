@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VillaToñíSL.MainPage"
+             BackgroundColor="White"
+             Title="VillaToñiSL">
+
+    <ContentPage.Resources>
+        <Style x:Key="HoverButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="LightGreen" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Style.Triggers>
+                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                    <Setter Property="BackgroundColor" Value="DarkGreen" />
+                    <Setter Property="TextColor" Value="White" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <Image Source="aguacate.png"
+               Aspect="AspectFit"
+               AbsoluteLayout.LayoutBounds="0.5, 0.5, 250, 250"
+               AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+        <Button Text="Gestión de Lotes"
+                Style="{StaticResource HoverButtonStyle}"
+                AbsoluteLayout.LayoutBounds="0.5, 0.2, 275, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnGestiondeLotes"/>
+
+        <Button Text="Reportes"
+                Style="{StaticResource HoverButtonStyle}"
+                AbsoluteLayout.LayoutBounds="0.5, 0.8, 275, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnReportes"/>
+
+        <Button Text="Inventarios"
+                Style="{StaticResource HoverButtonStyle}"
+                AbsoluteLayout.LayoutBounds="0.2, 0.5, 275, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnInventarios"/>
+
+        <Button Text="Configuración"
+                Style="{StaticResource HoverButtonStyle}"
+                AbsoluteLayout.LayoutBounds="0.8, 0.5, 275, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnConfiguracion"/>
+
+        <Button Text="Producción"
+                Style="{StaticResource HoverButtonStyle}"
+                AbsoluteLayout.LayoutBounds="0.3, 0.3, 275, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnProduccion"/>
+
+        <Button Text="Ventas"
+                Style="{StaticResource HoverButtonStyle}"
+                AbsoluteLayout.LayoutBounds="0.7, 0.3, 275, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnVentas"/>
+
+        <Button Text="Tareas"
+                Style="{StaticResource HoverButtonStyle}"
+                AbsoluteLayout.LayoutBounds="0.3, 0.7, 275, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnTareas"/>
+
+        <Button Text="Clima"
+                Style="{StaticResource HoverButtonStyle}"
+                AbsoluteLayout.LayoutBounds="0.7, 0.7, 275, 75"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnClima"/>
+    </AbsoluteLayout>
+
+</ContentPage>
