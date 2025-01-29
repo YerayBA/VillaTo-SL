@@ -3,9 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VillaToñíSL.Resources.Pages.ProduccionPage">
     
+    <ContentPage.Resources>
+        <Style x:Key="HoverButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="LightGreen" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Style.Triggers>
+                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                    <Setter Property="BackgroundColor" Value="DarkGreen" />
+                    <Setter Property="TextColor" Value="White" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
     <VerticalStackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
-        <Label Text="Fecha de la recogida" WidthRequest="300" TextColor="Black" />
-        <DatePicker x:Name="FechaCosecha" BackgroundColor="Honeydew " />
+        <Label Text="Fecha de la recogida" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
+        <DatePicker x:Name="FechaCosecha" BackgroundColor="Honeydew " WidthRequest="300" />
 
         <Label Text="Kilos recogidos" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
         <Entry x:Name="KilosRecogidos"  BackgroundColor="Honeydew" />
@@ -19,7 +33,10 @@
         <Label Text="Precio kg vendido" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center"/>
         <Entry x:Name="PrecioKgVendido"  BackgroundColor="Honeydew"  />
 
-        <Button Text="Guardar producción." VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnGuardarProduccionClicked" />
+        <Label Text="Impuesto sobre Cosecha" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="ImpuestoCosecha"  BackgroundColor="Honeydew" Placeholder="Introduzca el porcentaje de su impuesto" />
+
+        <Button Text="Guardar producción."  Style="{StaticResource HoverButtonStyle}" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnGuardarProduccionClicked" />
 
         <Grid x:Name="DatosGrid" IsVisible="True" Padding="10" BackgroundColor="LightGray">
             <Grid.ColumnDefinitions>
@@ -48,7 +65,10 @@
 
             <Label Text="Precio kg vendido"  Grid.Column="4" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center"/>
             <Label x:Name="PrecioKgVendidoLabel" Grid.Column="4" Grid.Row="1" HorizontalTextAlignment="Center"/>
+
+            <Label Text="Impuesto sobre Cosecha"  Grid.Column="5" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center"/>
+            <Label x:Name="ImpuestoCosechaLabel" Grid.Column="5" Grid.Row="1" HorizontalTextAlignment="Center"/>
         </Grid>
-        <Button Text="Exportar datos a Excel" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGreen" TextColor="Black" Clicked="ExportarDatosExcel" />
+        <Button Text="Exportar datos a Excel" VerticalOptions="End" HorizontalOptions="Center"  Style="{StaticResource HoverButtonStyle}" BackgroundColor="LightGreen" TextColor="Black" Clicked="ExportarDatosExcel" />
     </VerticalStackLayout>
 </ContentPage>

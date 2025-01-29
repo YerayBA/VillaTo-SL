@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VillaToñíSL.Resources.Pages.ClimaPage"
-             Title="ClimaPage">
+             x:Class="VillaToñíSL.Resources.Pages.ClimaPage">
     <VerticalStackLayout>
         <Label Text="Temperatura" WidthRequest="300" TextColor="Black" />
         <Label Text="Humedad" WidthRequest="300" TextColor="Black" />

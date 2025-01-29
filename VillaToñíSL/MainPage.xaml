@@ -29,25 +29,29 @@
                 Style="{StaticResource HoverButtonStyle}"
                 AbsoluteLayout.LayoutBounds="0.5, 0.2, 275, 75"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                Clicked="OnGestiondeLotes"/>
+                Clicked="OnGestiondeLotes"
+                IsEnabled="False"/>
 
         <Button Text="Reportes"
                 Style="{StaticResource HoverButtonStyle}"
                 AbsoluteLayout.LayoutBounds="0.5, 0.8, 275, 75"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                Clicked="OnReportes"/>
+                Clicked="OnReportes"
+                IsEnabled="False"/>
 
         <Button Text="Inventarios"
                 Style="{StaticResource HoverButtonStyle}"
                 AbsoluteLayout.LayoutBounds="0.2, 0.5, 275, 75"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                Clicked="OnInventarios"/>
+                Clicked="OnInventarios"
+                IsEnabled="False"/>
 
         <Button Text="Configuración"
                 Style="{StaticResource HoverButtonStyle}"
                 AbsoluteLayout.LayoutBounds="0.8, 0.5, 275, 75"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                Clicked="OnConfiguracion"/>
+                Clicked="OnConfiguracion"
+                IsEnabled="False"/>
 
         <Button Text="Producción"
                 Style="{StaticResource HoverButtonStyle}"
@@ -59,13 +63,15 @@
                 Style="{StaticResource HoverButtonStyle}"
                 AbsoluteLayout.LayoutBounds="0.7, 0.3, 275, 75"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                Clicked="OnVentas"/>
+                Clicked="OnVentas"
+                IsEnabled="False"/>
 
         <Button Text="Tareas"
                 Style="{StaticResource HoverButtonStyle}"
                 AbsoluteLayout.LayoutBounds="0.3, 0.7, 275, 75"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
-                Clicked="OnTareas"/>
+                Clicked="OnTareas"
+                IsEnabled="False"/>
 
         <Button Text="Clima"
                 Style="{StaticResource HoverButtonStyle}"
