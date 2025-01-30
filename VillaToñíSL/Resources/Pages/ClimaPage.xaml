@@ -2,12 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VillaToñíSL.Resources.Pages.ClimaPage">
-    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="LightGreen">
-        <VerticalStackLayout Padding="10" Spacing="20">
-            <Label x:Name="lblTemperatura" Text="Temperatura : " WidthRequest="600" TextColor="Black" FontSize="Large" />
-            <Label x:Name="lblHumedad" Text="Humedad :" WidthRequest="600" TextColor="Black" FontSize="Large" />
-            <Label x:Name="lblProbHoy" Text="Precipitaciones :" WidthRequest="600" TextColor="Black" FontSize="Large" />
-            <Label x:Name="lblViento" Text="Viento :" WidthRequest="600" TextColor="Black" FontSize="Large" />
-        </VerticalStackLayout>
-    </Grid>
+    <VerticalStackLayout>
+        <Label Text="Información del Clima en Algarrobo" FontSize="Large" Padding="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="LightGreen" >
+            <VerticalStackLayout Padding="10" Spacing="20">
+                <Label x:Name="lblestadoCielo" Text="El estado del cielo es :" WidthRequest="600" TextColor="Black" FontSize="Medium" />
+                <Label x:Name="lblTemperatura" Text="Temperatura : " WidthRequest="600" TextColor="Black" FontSize="Medium" />
+                <Label x:Name="lblHumedad" Text="Humedad :" WidthRequest="600" TextColor="Black" FontSize="Medium" />
+                <Label x:Name="lblProbHoy" Text="Precipitaciones :" WidthRequest="600" TextColor="Black" FontSize="Medium" />
+                <Label x:Name="lblViento" Text="Viento :" WidthRequest="600" TextColor="Black" FontSize="Medium" />
+            </VerticalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
 </ContentPage>

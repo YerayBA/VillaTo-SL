@@ -27,9 +27,12 @@ public partial class ClimaPage : ContentPage
             var probHoy = doc.RootElement.GetProperty("pronostico").GetProperty("hoy").GetProperty("prob_precipitacion");
             var humedad = doc.RootElement.GetProperty("humedad").GetString();
             var viento = doc.RootElement.GetProperty("viento").GetString();
+            var estadoCielo = doc.RootElement.GetProperty("stateSky").GetProperty("description");
 
+
+            lblestadoCielo.Text = $"Estado del Cielo: {estadoCielo}";
             lblTemperatura.Text = $"Temperatura: {temperatura}°C";
-            lblProbHoy.Text = $"Probabilidad de precipitación hoy: {probHoy}%";
+            lblProbHoy.Text = $"Probabilidad de precipitación hoy: {probHoy[0]} %";
             lblHumedad.Text = $"Humedad: {humedad}%";
             lblViento.Text = $"Viento: {viento} km/h";
         }
