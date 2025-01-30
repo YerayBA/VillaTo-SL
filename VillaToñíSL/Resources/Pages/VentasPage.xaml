@@ -2,13 +2,17 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 x:Class="VillaToñíSL.Resources.Pages.VentasPage"
-                xmlns:charts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
-                Title="VentasPage">
-    
-    <VerticalStackLayout Padding="200">
+                xmlns:charts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui">
+
+    <VerticalStackLayout Padding="300" Spacing="20">
         <Label Text="Ventas Mensuales" FontSize="24" HorizontalOptions="Center" />
 
          
         <charts:ChartView x:Name="SalesChart" HeightRequest="250"/>
+
+        <Label Text="Introducir datos de venta" FontSize="24" HorizontalOptions="Center" Padding="20" />
+        <Entry x:Name="Mes" Placeholder="Mes de la venta" />
+        <Entry x:Name="ValorVenta" Placeholder="ValorVenta" Keyboard="Numeric" />
+        <Button Text="Añadir Venta" Clicked="OnGuardarVentaClicked" />
     </VerticalStackLayout>
 </ContentPage>
