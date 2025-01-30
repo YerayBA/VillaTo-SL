@@ -22,19 +22,19 @@
         <DatePicker x:Name="FechaCosecha" BackgroundColor="Honeydew " WidthRequest="300" />
 
         <Label Text="Kilos recogidos" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
-        <Entry x:Name="KilosRecogidos"  BackgroundColor="Honeydew" />
+        <Entry x:Name="KilosRecogidos" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" />
 
         <Label Text="Número de árboles recogidos" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
-        <Entry x:Name="ArbolesRecogidos"  BackgroundColor="Honeydew"  />
+        <Entry x:Name="ArbolesRecogidos" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" />
 
         <Label Text="Número de cajas entregadas" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
-        <Entry x:Name="CajasEntregadas"  BackgroundColor="Honeydew"  />
+        <Entry x:Name="CajasEntregadas" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" />
 
         <Label Text="Precio kg vendido" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center"/>
-        <Entry x:Name="PrecioKgVendido"  BackgroundColor="Honeydew"  />
+        <Entry x:Name="PrecioKgVendido" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" />
 
         <Label Text="Impuesto sobre Cosecha" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center"/>
-        <Entry x:Name="ImpuestoCosecha"  BackgroundColor="Honeydew" Placeholder="Introduzca el porcentaje de su impuesto" />
+        <Entry x:Name="ImpuestoCosecha" BackgroundColor="Honeydew" Placeholder="Introduzca el porcentaje de su impuesto" Keyboard="Numeric" TextChanged="OnTextChanged" />
 
         <Button Text="Guardar producción."  Style="{StaticResource HoverButtonStyle}" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnGuardarProduccionClicked" />
 
@@ -45,6 +45,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -66,7 +68,7 @@
             <Label Text="Precio kg vendido"  Grid.Column="4" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center"/>
             <Label x:Name="PrecioKgVendidoLabel" Grid.Column="4" Grid.Row="1" HorizontalTextAlignment="Center"/>
 
-            <Label Text="Impuesto sobre Cosecha"  Grid.Column="5" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center"/>
+            <Label Text="Impuesto Cosecha"  Grid.Column="5" Grid.Row="0" Padding="10" HorizontalTextAlignment="Center"/>
             <Label x:Name="ImpuestoCosechaLabel" Grid.Column="5" Grid.Row="1" HorizontalTextAlignment="Center"/>
         </Grid>
         <Button Text="Exportar datos a Excel" VerticalOptions="End" HorizontalOptions="Center"  Style="{StaticResource HoverButtonStyle}" BackgroundColor="LightGreen" TextColor="Black" Clicked="ExportarDatosExcel" />

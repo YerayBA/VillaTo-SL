@@ -9,6 +9,19 @@ public partial class ProduccionPage : ContentPage
         InitializeComponent();
     }
 
+    private void OnTextChanged(object sender, TextChangedEventArgs e)
+    {
+        if (!string.IsNullOrEmpty(e.NewTextValue))
+        {
+            // Filtrar solo números
+            if (!int.TryParse(e.NewTextValue, out _))
+            {
+                ((Entry)sender).Text = e.OldTextValue; // Restaurar el valor anterior
+            }
+        }
+    }
+
+
     private void OnGuardarProduccionClicked(object sender, EventArgs e)
     {
         FechaCosechaLabel.Text = FechaCosecha.Date.ToString("dd/MM/yyyy");
@@ -25,7 +38,7 @@ public partial class ProduccionPage : ContentPage
         ImpuestoCosecha.Text = string.Empty;
     }
 
-    private void ExportarDatosExcel(object sender, EventArgs e)
+    private async void ExportarDatosExcel(object sender, EventArgs e)
     {
         try
         {
@@ -65,16 +78,38 @@ public partial class ProduccionPage : ContentPage
                 var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 var folderName = DateTime.Now.ToString("yyyy-MM-dd") + "_produccion";
                 var folderPath = Path.Combine(desktopPath, folderName);
-                Directory.CreateDirectory(folderPath);
-                var file = new FileInfo(Path.Combine(folderPath, "Produccion.xlsx"));
-                package.SaveAs(file);
 
-                DisplayAlert("Mensaje de Exportación", "Datos exportados correctamente en el escritorio", "Aceptar");
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+               
+                    var file = new FileInfo(Path.Combine(folderPath, "Produccion.xlsx"));
+                    package.SaveAs(file);
+
+                }
+                else
+                {
+                   var file = new FileInfo(Path.Combine(folderPath, "Produccion.xlsx"));
+
+                   bool sobreescribir = await DisplayAlert("En la fecha seleccionada ya ha exportado los datos", "Si vuelve a Exportarlos sobreescribirá los datos de la anterior producción", "Aceptar", "Cancelar");
+
+                    if (sobreescribir)
+                    {
+                        package.SaveAs(file);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    
+                }
+
+               await  DisplayAlert("Mensaje de Exportación", "Datos exportados correctamente en el escritorio", "Aceptar");
             }
         }
         catch (Exception ex)
         {
-            DisplayAlert("Los valores no son correctos, por favor, compruebelos e intentelo de nuevo", ex.Message, "Aceptar");
+             await DisplayAlert("Los valores no son correctos, por favor, compruebelos e intentelo de nuevo", ex.Message, "Aceptar");
         }
     }
 }
