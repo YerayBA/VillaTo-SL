@@ -42,9 +42,10 @@ namespace VillaToñíSL
             {
                 await Navigation.PushAsync(new VentasPage());
             }
-            catch (Exception) 
+            catch (Exception Ex) 
             {
-            
+                Console.WriteLine(Ex.ToString());
+
             }
         }
 

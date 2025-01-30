@@ -8,7 +8,7 @@
     <VerticalStackLayout Padding="20">
         <Label Text="Ventas Mensuales" FontSize="24" HorizontalOptions="Center" />
 
-        <!-- Gráfico de Ventas -->
+         
         <charts:ChartView x:Name="SalesChart" HeightRequest="250"/>
     </VerticalStackLayout>
 </ContentPage>
