@@ -38,7 +38,14 @@ namespace VillaToñíSL
 
         private async void OnVentas(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new VentasPage());
+            try
+            {
+                await Navigation.PushAsync(new VentasPage());
+            }
+            catch (Exception) 
+            {
+            
+            }
         }
 
         private async void OnTareas(object sender, EventArgs e)

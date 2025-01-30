@@ -12,9 +12,10 @@ public partial class VentasPage : ContentPage
         
     }
 
-    protected override void OnAppearing()
+    protected override async void OnAppearing()
     {
         base.OnAppearing();
+        await Task.Delay(100); // Para dar tiempo a que los controles se inicialicen correctamente
         CargarGraficoVentas();
     }
 
