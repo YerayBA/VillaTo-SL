@@ -5,7 +5,7 @@
                 xmlns:charts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
                 Title="VentasPage">
     
-    <VerticalStackLayout Padding="20">
+    <VerticalStackLayout Padding="200">
         <Label Text="Ventas Mensuales" FontSize="24" HorizontalOptions="Center" />
 
          

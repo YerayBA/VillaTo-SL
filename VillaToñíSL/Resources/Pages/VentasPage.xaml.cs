@@ -32,14 +32,19 @@ public partial class VentasPage : ContentPage
             };
 
         // Configurar gráfico de barras
-        var chart = new BarChart
+        SalesChart.Chart = new LineChart
         {
             Entries = ventas,
-            LabelTextSize = 24,
+            LabelTextSize = 20,
+            LineMode = LineMode.Spline, // Hace que las líneas sean suaves
+            LineSize = 8,
+            PointMode = PointMode.Circle,
+            PointSize = 18,
             BackgroundColor = SKColors.Transparent
         };
 
-        SalesChart.Chart = chart;
+
+
     }
 }
 
