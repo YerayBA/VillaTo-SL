@@ -2,9 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VillaToñíSL.Resources.Pages.ClimaPage">
-    <VerticalStackLayout>
-        <Label Text="Temperatura" WidthRequest="300" TextColor="Black" />
-        <Label Text="Humedad" WidthRequest="300" TextColor="Black" />
-        <Label Text="Precipitaciones" WidthRequest="300" TextColor="Black" />
-    </VerticalStackLayout>
+    <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="LightGreen">
+        <VerticalStackLayout Padding="10" Spacing="20">
+            <Label x:Name="lblTemperatura" Text="Temperatura : " WidthRequest="600" TextColor="Black" FontSize="Large" />
+            <Label x:Name="lblHumedad" Text="Humedad :" WidthRequest="600" TextColor="Black" FontSize="Large" />
+            <Label x:Name="lblProbHoy" Text="Precipitaciones :" WidthRequest="600" TextColor="Black" FontSize="Large" />
+            <Label x:Name="lblViento" Text="Viento :" WidthRequest="600" TextColor="Black" FontSize="Large" />
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

@@ -1,37 +1,37 @@
 using Newtonsoft.Json.Linq;
+using System.Text.Json;
 
 namespace VillaToñíSL.Resources.Pages;
 
 public partial class ClimaPage : ContentPage
 {
-    private const string ApiUrl = "https://www.el-tiempo.net/api/json/v1/provincias/01/municipios";
+    private const string ApiUrl = "https://www.el-tiempo.net/api/json/v2/provincias/29/municipios/29005";
 
     public ClimaPage()
     {
-        InitializeComponent();
         _ = GetWeatherDataAsync();
+        InitializeComponent();
+        
     }
 
     private async Task GetWeatherDataAsync()
     {
-        using HttpClient client = new ();
+        using HttpClient client = new();
         HttpResponseMessage response = await client.GetAsync(ApiUrl);
         if (response.IsSuccessStatusCode)
         {
-            string content = await response.Content.ReadAsStringAsync();
-            JObject json = JObject.Parse(content);
-            var archezData = json["Provincias"].FirstOrDefault(c => c["name"].ToString() == "Alava");
+            string responseBody = await response.Content.ReadAsStringAsync();
+            using JsonDocument doc = JsonDocument.Parse(responseBody);
 
-            if (archezData != null)
-            {
+            var temperatura = doc.RootElement.GetProperty("temperatura_actual").GetString();
+            var probHoy = doc.RootElement.GetProperty("pronostico").GetProperty("hoy").GetProperty("prob_precipitacion");
+            var humedad = doc.RootElement.GetProperty("humedad").GetString();
+            var viento = doc.RootElement.GetProperty("viento").GetString();
 
-                double temperature = archezData["temperatura_actual"].ToObject<double>();
-                int humidity = archezData["humedad"].ToObject<int>();
-                double precipitation = archezData["precipitacion"].ToObject<double>();
-
-                // Aquí puedes actualizar la UI con los datos obtenidos
-
-            }
+            lblTemperatura.Text = $"Temperatura: {temperatura}°C";
+            lblProbHoy.Text = $"Probabilidad de precipitación hoy: {probHoy}%";
+            lblHumedad.Text = $"Humedad: {humedad}%";
+            lblViento.Text = $"Viento: {viento} km/h";
         }
     }
 }
