@@ -5,15 +5,15 @@ namespace VillaToñíSL.Resources.Pages;
 
 public partial class VentasPage : ContentPage
 {
-	public VentasPage()
+
+    private List<ChartEntry> ventas1 = new List<ChartEntry>();
+
+    public VentasPage()
 	{
        
         InitializeComponent();
         
     }
-
-    
-private List<ChartEntry> ventas1 = new List<ChartEntry>();
 
     private void CargarGraficoVentas(string ventas, string mes)
     {
@@ -36,33 +36,54 @@ private List<ChartEntry> ventas1 = new List<ChartEntry>();
             LabelOrientation = Orientation.Horizontal,
             ValueLabelOrientation = Orientation.Horizontal
         };
+        
     }
 
 
-    private void OnGuardarVentaClicked(object sender, EventArgs e)
+    private async void OnGuardarVentaClicked(object sender, EventArgs e)
     {
-        string mes = Mes.SelectedItem.ToString(); 
-
+        string mes = Mes.SelectedItem?.ToString();
         string ventaMes = ValorVenta.Text;
 
-        if (!Double.TryParse(ventaMes, out double venta))
+        if (string.IsNullOrEmpty(mes))
         {
-            DisplayAlert("Error", "Por favor, introduce un valor numérico válido para la venta.", "Aceptar");
+            await DisplayAlert("Error", "Por favor, selecciona un mes.", "Aceptar");
             return;
         }
 
-        if (Double.Parse(ventaMes) > 100000 || Double.Parse(ventaMes) < 0)
+
+        if (string.IsNullOrEmpty(ventaMes))
         {
-            DisplayAlert("Error", "El valor de la venta debe comprenderse entre 0 y 100.000 euros", "Aceptar");
-            return;
-        }
+            bool aceptar = await DisplayAlert("Advertencia", "No has introducido un valor a la venta, se aplicará automaticamente valor 0", "Aceptar", "Cancelar");
 
-        
+            if (aceptar)
+            {
+                ventaMes = "0";
+            }
+            else
+            {
+                return;
 
+            }
 
-        CargarGraficoVentas(ventaMes, mes);
+            if (!Double.TryParse(ventaMes, out double venta))
+            {
+                await DisplayAlert("Error", "Por favor, introduce un valor numérico válido para la venta.", "Aceptar");
+                return;
+            }
+
+            if (Double.Parse(ventaMes) > 100000 || Double.Parse(ventaMes) < 0)
+            {
+                await DisplayAlert("Error", "El valor de la venta debe comprenderse entre 0 y 100.000 euros", "Aceptar");
+                return;
+            }
+
+            CargarGraficoVentas(ventaMes, mes);
 
 
     }
+
+  }
 }
+
 

@@ -4,14 +4,14 @@
                 x:Class="VillaToñíSL.Resources.Pages.VentasPage"
                 xmlns:charts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui">
 
-    <VerticalStackLayout Padding="300" Spacing="20">
+    <VerticalStackLayout Padding="250" Spacing="20">
         <Label Text="Ventas Mensuales" FontSize="24" HorizontalOptions="Center" />
 
          
         <charts:ChartView x:Name="GraficoVentas" HeightRequest="250"/>
 
         <Label Text="Introducir datos de venta" FontSize="24" HorizontalOptions="Center" Padding="20" />
-        <Picker x:Name="Mes" Title="Mes de la venta">
+        <Picker x:Name="Mes" Title="Mes de la venta" WidthRequest="300" BackgroundColor="Honeydew">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Enero</x:String>
@@ -29,7 +29,7 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        <Entry x:Name="ValorVenta" Placeholder="ValorVenta" Keyboard="Numeric" />
-        <Button Text="Añadir Venta" Clicked="OnGuardarVentaClicked" />
+        <Entry x:Name="ValorVenta" Placeholder="Valor de la Venta" Keyboard="Numeric" WidthRequest="300" BackgroundColor="Honeydew" />
+        <Button Text="Añadir Venta" Clicked="OnGuardarVentaClicked" BackgroundColor="LightGreen" WidthRequest="300"/>
     </VerticalStackLayout>
 </ContentPage>
