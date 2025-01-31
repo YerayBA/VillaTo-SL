@@ -37,7 +37,7 @@
                 AbsoluteLayout.LayoutBounds="0.5, 0.8, 275, 75"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
                 Clicked="OnReportes"
-                IsEnabled="False"/>
+                IsEnabled="True"/>
 
         <Button Text="Inventarios"
                 Style="{StaticResource HoverButtonStyle}"

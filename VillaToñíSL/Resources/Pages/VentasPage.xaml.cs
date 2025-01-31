@@ -17,12 +17,14 @@ public partial class VentasPage : ContentPage
 
     private void CargarGraficoVentas(string ventas, string mes)
     {
+
         ventas1.Add(new ChartEntry(int.Parse(ventas))
         {
             Label = mes,
             ValueLabel = ventas + " euros",
             Color = SKColor.Parse("#3498db")
         });
+
 
         GraficoVentas.Chart = new LineChart
         {
@@ -42,7 +44,7 @@ public partial class VentasPage : ContentPage
 
     private async void OnGuardarVentaClicked(object sender, EventArgs e)
     {
-        string mes = Mes.SelectedItem?.ToString();
+        string mes = Mes.SelectedItem.ToString();
         string ventaMes = ValorVenta.Text;
 
         if (string.IsNullOrEmpty(mes))
