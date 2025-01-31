@@ -78,12 +78,13 @@ public partial class VentasPage : ContentPage
                 return;
             }
 
-            CargarGraficoVentas(ventaMes, mes);
 
+        }
+
+    
+        CargarGraficoVentas(ventaMes, mes);
 
     }
-
-  }
 }
 
 
