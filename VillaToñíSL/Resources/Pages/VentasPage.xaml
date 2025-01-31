@@ -8,10 +8,27 @@
         <Label Text="Ventas Mensuales" FontSize="24" HorizontalOptions="Center" />
 
          
-        <charts:ChartView x:Name="SalesChart" HeightRequest="250"/>
+        <charts:ChartView x:Name="GraficoVentas" HeightRequest="250"/>
 
         <Label Text="Introducir datos de venta" FontSize="24" HorizontalOptions="Center" Padding="20" />
-        <Entry x:Name="Mes" Placeholder="Mes de la venta" />
+        <Picker x:Name="Mes" Title="Mes de la venta">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Enero</x:String>
+                    <x:String>Febrero</x:String>
+                    <x:String>Marzo</x:String>
+                    <x:String>Abril</x:String>
+                    <x:String>Mayo</x:String>
+                    <x:String>Junio</x:String>
+                    <x:String>Julio</x:String>
+                    <x:String>Agosto</x:String>
+                    <x:String>Septiembre</x:String>
+                    <x:String>Octubre</x:String>
+                    <x:String>Noviembre</x:String>
+                    <x:String>Diciembre</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
         <Entry x:Name="ValorVenta" Placeholder="ValorVenta" Keyboard="Numeric" />
         <Button Text="Añadir Venta" Clicked="OnGuardarVentaClicked" />
     </VerticalStackLayout>

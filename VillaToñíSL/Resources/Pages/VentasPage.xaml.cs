@@ -12,44 +12,57 @@ public partial class VentasPage : ContentPage
         
     }
 
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        await Task.Delay(100); // Para dar tiempo a que los controles se inicialicen correctamente
-        CargarGraficoVentas();
-    }
+    
+private List<ChartEntry> ventas1 = new List<ChartEntry>();
 
-    private void CargarGraficoVentas()
+    private void CargarGraficoVentas(string ventas, string mes)
     {
-        // Datos de ventas (simulados)
-        var ventas = new List<ChartEntry>
-            {
-                new ChartEntry(1000) { Label = "Enero", ValueLabel = "5000", Color = SKColor.Parse("#3498db") },
-                new ChartEntry(7000) { Label = "Febrero", ValueLabel = "7000", Color = SKColor.Parse("#2ecc71") },
-                new ChartEntry(500) { Label = "Marzo", ValueLabel = "6500", Color = SKColor.Parse("#f1c40f") },
-                new ChartEntry(8000) { Label = "Abril", ValueLabel = "8000", Color = SKColor.Parse("#e74c3c") },
-                new ChartEntry(30) { Label = "Mayo", ValueLabel = "9000", Color = SKColor.Parse("#9b59b6") }
-            };
-
-        // Configurar gráfico de barras
-        SalesChart.Chart = new LineChart
+        ventas1.Add(new ChartEntry(int.Parse(ventas))
         {
-            Entries = ventas,
+            Label = mes,
+            ValueLabel = ventas + " euros",
+            Color = SKColor.Parse("#3498db")
+        });
+
+        GraficoVentas.Chart = new LineChart
+        {
+            Entries = ventas1,
             LabelTextSize = 20,
-            LineMode = LineMode.Spline, // Hace que las líneas sean suaves
+            LineMode = LineMode.Spline,
             LineSize = 8,
             PointMode = PointMode.Circle,
             PointSize = 18,
-            BackgroundColor = SKColors.Transparent
+            BackgroundColor = SKColors.Transparent,
+            LabelOrientation = Orientation.Horizontal,
+            ValueLabelOrientation = Orientation.Horizontal
         };
-
-
-
     }
+
 
     private void OnGuardarVentaClicked(object sender, EventArgs e)
     {
+        string mes = Mes.SelectedItem.ToString(); 
+
+        string ventaMes = ValorVenta.Text;
+
+        if (!Double.TryParse(ventaMes, out double venta))
+        {
+            DisplayAlert("Error", "Por favor, introduce un valor numérico válido para la venta.", "Aceptar");
+            return;
+        }
+
+        if (Double.Parse(ventaMes) > 100000 || Double.Parse(ventaMes) < 0)
+        {
+            DisplayAlert("Error", "El valor de la venta debe comprenderse entre 0 y 100.000 euros", "Aceptar");
+            return;
+        }
+
         
+
+
+        CargarGraficoVentas(ventaMes, mes);
+
+
     }
 }
 
