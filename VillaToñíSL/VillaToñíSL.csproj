@@ -66,6 +66,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Resources\Pages\ConfiguracionPages\ConfigurarAparienciaPage.xaml.cs">
+	    <DependentUpon>ConfigurarAparienciaPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Resources\Pages\LotesPage.xaml.cs">
 	    <DependentUpon>LotesPage.xaml</DependentUpon>
 	  </Compile>
@@ -76,6 +79,27 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources\Pages\ConfiguracionPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\ConfiguracionPages\AdminAreaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\ConfiguracionPages\ConfigurarAparienciaPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\ConfiguracionPages\Contacto.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\ConfiguracionPages\Idiomas.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\ConfiguracionPages\InfoApp.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\ConfiguracionPages\InfoUsuario.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Pages\ConfiguracionPages\SuscripcionPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Resources\Pages\FinanzasPage.xaml">

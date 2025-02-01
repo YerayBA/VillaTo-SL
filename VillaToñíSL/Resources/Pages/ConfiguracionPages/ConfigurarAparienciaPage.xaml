@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VillaToñíSL.Resources.Pages.ConfiguracionPages.ConfigurarAparienciaPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="150" Spacing="30" >
+            <Label 
+                Text="Configuración de Apariencia"
+                FontSize="Large"
+                HorizontalOptions="Center" />
+
+            <Label Text="Tamaño de la letra:"  HorizontalOptions="Center" WidthRequest="300" />
+            <Slider x:Name="FontSizeSlider" Minimum="10" Maximum="30" Value="14" WidthRequest="300" ThumbColor="LightGreen" MinimumTrackColor="LightGreen"/>
+            <Label Text="Imagen de portada:" WidthRequest="300"/>
+            <Image x:Name="CoverImage" Source="C:\Users\YerayPatricia\source\repos\VillaToñíSL\VillaToñíSL\Resources\Images\aguacate.png" HeightRequest="200" />
+            <Button x:Name="CambiarImagen" Text="Cambiar Imagen" Clicked="OnChangeImageClicked" WidthRequest="300" TextColor="Black" BackgroundColor="LightGreen" AutomationProperties.IsInAccessibleTree="True"/>
+
+            <Label Text="Color de los botones:" WidthRequest="300" />
+            <Picker x:Name="ButtonColorPicker" WidthRequest="300">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Rojo</x:String>
+                        <x:String>Verde</x:String>
+                        <x:String>Azul</x:String>
+                        <x:String>Naranja</x:String>
+                        <x:String>Amarillo</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button x:Name="BotonGuardar" Text="Guardar Cambios" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnSaveChangesClicked" WidthRequest="300" AutomationProperties.IsInAccessibleTree="True" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
