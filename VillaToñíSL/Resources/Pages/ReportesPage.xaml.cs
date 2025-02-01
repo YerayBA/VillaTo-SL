@@ -46,6 +46,7 @@ public partial class ReportesPage : ContentPage
         })
         {
             smtp.Send(message);
+            DisplayAlert("Correo enviado", "El correo ha sido enviado correctamente", "Aceptar");
         }
     }
 }
