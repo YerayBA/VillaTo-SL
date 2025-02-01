@@ -51,7 +51,7 @@
                 AbsoluteLayout.LayoutBounds="0.8, 0.5, 275, 75"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
                 Clicked="OnConfiguracion"
-                IsEnabled="False"/>
+                IsEnabled="True"/>
 
         <Button Text="Producción"
                 Style="{StaticResource HoverButtonStyle}"

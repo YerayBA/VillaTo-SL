@@ -3,10 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VillaToñíSL.Resources.Pages.ConfiguracionPage"
              Title="ConfiguracionPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <Style x:Key="HoverButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="LightGreen" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Style.Triggers>
+                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                    <Setter Property="BackgroundColor" Value="DarkGreen" />
+                    <Setter Property="TextColor" Value="White" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <Image Source="ajustes.png"
+           Aspect="AspectFit"
+           AbsoluteLayout.LayoutBounds="0.5, 0.5, 250, 250"
+           AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+        <Button Text="Configurar Apariencia"
+            Style="{StaticResource HoverButtonStyle}"
+            AbsoluteLayout.LayoutBounds="0.5, 0.2, 275, 75"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="ConfigurarApariencia"
+            IsEnabled="True"/>
+
+        <Button Text="Información de Usuario"
+            Style="{StaticResource HoverButtonStyle}"
+            AbsoluteLayout.LayoutBounds="0.5, 0.8, 275, 75"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="InfoUsuario"
+            IsEnabled="False"/>
+
+        <Button Text="Idiomas"
+            Style="{StaticResource HoverButtonStyle}"
+            AbsoluteLayout.LayoutBounds="0.2, 0.5, 275, 75"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="Idiomas"
+            IsEnabled="False"/>
+
+        <Button Text="Contacto"
+            Style="{StaticResource HoverButtonStyle}"
+            AbsoluteLayout.LayoutBounds="0.8, 0.5, 275, 75"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="Contacto"
+            IsEnabled="False"/>
+
+        <Button Text="Informacion de la Aplicación"
+            Style="{StaticResource HoverButtonStyle}"
+            AbsoluteLayout.LayoutBounds="0.3, 0.3, 275, 75"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="InfoApp"
+            IsEnabled="False"/>
+
+    </AbsoluteLayout>
+
 </ContentPage>

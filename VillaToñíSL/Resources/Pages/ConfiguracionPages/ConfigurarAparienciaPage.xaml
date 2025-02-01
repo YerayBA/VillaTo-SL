@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VillaToñíSL.Resources.Pages.ConfiguracionPages.ConfigurarAparienciaPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label 
+                Text="Configuración de Apariencia"
+                FontSize="Large"
+                HorizontalOptions="Center" />
+
+            <Label Text="Tamaño de la letra:" />
+            <Slider x:Name="FontSizeSlider" Minimum="10" Maximum="30" Value="14" />
+
+            <Label Text="Imagen de portada:" />
+            <Image x:Name="CoverImage" Source="default_cover.jpg" HeightRequest="200" />
+            <Button Text="Cambiar Imagen" Clicked="OnChangeImageClicked" />
+
+            <Label Text="Color de los botones:" />
+            <Picker x:Name="ButtonColorPicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Rojo</x:String>
+                        <x:String>Verde</x:String>
+                        <x:String>Azul</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Guardar Cambios" BackgroundColor="LightGray" Clicked="OnSaveChangesClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
