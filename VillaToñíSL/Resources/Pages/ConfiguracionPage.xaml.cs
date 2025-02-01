@@ -11,6 +11,7 @@ public partial class ConfiguracionPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
     private async void ConfigurarApariencia(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new ConfigurarAparienciaPage());
