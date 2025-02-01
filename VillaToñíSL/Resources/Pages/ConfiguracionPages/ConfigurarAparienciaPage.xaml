@@ -3,21 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VillaToñíSL.Resources.Pages.ConfiguracionPages.ConfigurarAparienciaPage">
     <ScrollView>
-        <VerticalStackLayout Padding="20">
+        <VerticalStackLayout Padding="150" Spacing="30" >
             <Label 
                 Text="Configuración de Apariencia"
                 FontSize="Large"
                 HorizontalOptions="Center" />
 
-            <Label Text="Tamaño de la letra:" />
-            <Slider x:Name="FontSizeSlider" Minimum="10" Maximum="30" Value="14" />
+            <Label Text="Tamaño de la letra:"  HorizontalOptions="Center" WidthRequest="300" />
+            <Slider x:Name="FontSizeSlider" Minimum="10" Maximum="30" Value="14" WidthRequest="300" ThumbColor="LightGreen" MinimumTrackColor="LightGreen"/>
+            <Label Text="Imagen de portada:" WidthRequest="300"/>
+            <Image x:Name="CoverImage" Source="./Resources/Images/aguacate.png" HeightRequest="200" />
+            <Button Text="Cambiar Imagen" Clicked="OnChangeImageClicked" WidthRequest="300" TextColor="Black" BackgroundColor="LightGreen"/>
 
-            <Label Text="Imagen de portada:" />
-            <Image x:Name="CoverImage" Source="default_cover.jpg" HeightRequest="200" />
-            <Button Text="Cambiar Imagen" Clicked="OnChangeImageClicked" />
-
-            <Label Text="Color de los botones:" />
-            <Picker x:Name="ButtonColorPicker">
+            <Label Text="Color de los botones:" WidthRequest="300" />
+            <Picker x:Name="ButtonColorPicker" WidthRequest="300">
                 <Picker.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Rojo</x:String>
@@ -27,7 +26,7 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Button Text="Guardar Cambios" BackgroundColor="LightGray" Clicked="OnSaveChangesClicked" />
+            <Button Text="Guardar Cambios" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnSaveChangesClicked" WidthRequest="300" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -36,4 +36,14 @@ public partial class ConfiguracionPage : ContentPage
         await Navigation.PushAsync(new InfoApp());
     }
 
+    private async void SuscripcionPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SuscripcionPage());
+    }
+
+    private async void AdminArea(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new AdminAreaPage());
+    }
+
 }
