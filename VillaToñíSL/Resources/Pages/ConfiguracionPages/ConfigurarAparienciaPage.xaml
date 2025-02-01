@@ -12,8 +12,8 @@
             <Label Text="Tamaño de la letra:"  HorizontalOptions="Center" WidthRequest="300" />
             <Slider x:Name="FontSizeSlider" Minimum="10" Maximum="30" Value="14" WidthRequest="300" ThumbColor="LightGreen" MinimumTrackColor="LightGreen"/>
             <Label Text="Imagen de portada:" WidthRequest="300"/>
-            <Image x:Name="CoverImage" Source="./Resources/Images/aguacate.png" HeightRequest="200" />
-            <Button Text="Cambiar Imagen" Clicked="OnChangeImageClicked" WidthRequest="300" TextColor="Black" BackgroundColor="LightGreen"/>
+            <Image x:Name="CoverImage" Source="C:\Users\YerayPatricia\source\repos\VillaToñíSL\VillaToñíSL\Resources\Images\aguacate.png" HeightRequest="200" />
+            <Button x:Name="CambiarImagen" Text="Cambiar Imagen" Clicked="OnChangeImageClicked" WidthRequest="300" TextColor="Black" BackgroundColor="LightGreen" AutomationProperties.IsInAccessibleTree="True"/>
 
             <Label Text="Color de los botones:" WidthRequest="300" />
             <Picker x:Name="ButtonColorPicker" WidthRequest="300">
@@ -22,11 +22,13 @@
                         <x:String>Rojo</x:String>
                         <x:String>Verde</x:String>
                         <x:String>Azul</x:String>
+                        <x:String>Naranja</x:String>
+                        <x:String>Amarillo</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
 
-            <Button Text="Guardar Cambios" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnSaveChangesClicked" WidthRequest="300" />
+            <Button x:Name="BotonGuardar" Text="Guardar Cambios" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnSaveChangesClicked" WidthRequest="300" AutomationProperties.IsInAccessibleTree="True" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

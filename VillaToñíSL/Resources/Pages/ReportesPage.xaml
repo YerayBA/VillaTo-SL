@@ -6,7 +6,7 @@
         <Label Text="Reporte de problemas" VerticalOptions="Center"  HorizontalOptions="Center"/>
         <Entry x:Name="TitutoProblema" BackgroundColor="Honeydew"  WidthRequest="500"/>
         <Label Text="Descripción del problema" VerticalOptions="Center"  HorizontalOptions="Center"/>
-        <Editor x:Name="DescripcionProblema" MaxLength="1000" HeightRequest="200"  WidthRequest="500" BackgroundColor="Lavender" />
+        <Editor x:Name="DescripcionProblema"  MaxLength="1000" HeightRequest="200"  WidthRequest="500" BackgroundColor="Honeydew" />
         <Button Text="Enviar" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnEnviarProblemaClicked" />
     </VerticalStackLayout>
 </ContentPage>
