@@ -29,7 +29,8 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-        <Entry x:Name="ValorVenta" Placeholder="Valor de la Venta" Keyboard="Numeric" WidthRequest="300" BackgroundColor="Honeydew" />
+        <Entry x:Name="ValorVenta" Placeholder="Valor de la Venta en euros" Keyboard="Numeric" WidthRequest="300" BackgroundColor="Honeydew" />
         <Button Text="Añadir Venta" Clicked="OnGuardarVentaClicked" BackgroundColor="LightGreen" WidthRequest="300"/>
+        <Button Text="Borrar ventas" Clicked="BorrarGrafico" BackgroundColor="LightGreen" WidthRequest="300"/>
     </VerticalStackLayout>
 </ContentPage>

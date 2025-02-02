@@ -40,11 +40,38 @@ public partial class VentasPage : ContentPage
         };
         
     }
+    private void BorrarGrafico(object sender, EventArgs e)
+    {
+        try
+        {
+            ventas1.Clear(); 
+
+            GraficoVentas.Chart = new LineChart
+            {   
+            Entries = ventas1,
+            LabelTextSize = 20,
+            LineMode = LineMode.Spline,
+            LineSize = 8,
+            PointMode = PointMode.Circle,
+            PointSize = 18,
+            BackgroundColor = SKColors.Transparent,
+            LabelOrientation = Orientation.Horizontal,
+            ValueLabelOrientation = Orientation.Horizontal
+
+             };
+    
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Error", ex.Message, "Aceptar");
+        }
+    }
+
 
 
     private async void OnGuardarVentaClicked(object sender, EventArgs e)
     {
-        string mes = Mes.SelectedItem.ToString();
+        string mes = Mes.SelectedItem?.ToString();
         string ventaMes = ValorVenta.Text;
 
         if (string.IsNullOrEmpty(mes))

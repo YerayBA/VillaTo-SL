@@ -1,6 +1,3 @@
-
-using Microsoft.UI.Xaml.Controls;
-
 namespace VillaToñíSL.Resources.Pages.ConfiguracionPages;
 
 public partial class ConfigurarAparienciaPage : ContentPage

@@ -22,16 +22,16 @@
         <DatePicker x:Name="FechaCosecha" BackgroundColor="Honeydew " WidthRequest="300" />
 
         <Label Text="Kilos recogidos" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
-        <Entry x:Name="KilosRecogidos" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" />
+        <Entry x:Name="KilosRecogidos" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" Placeholder="Kilogramos" />
 
-        <Label Text="Número de árboles recogidos" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
-        <Entry x:Name="ArbolesRecogidos" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" />
+        <Label Text="Número de árboles recogidos" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center"  />
+        <Entry x:Name="ArbolesRecogidos" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" Placeholder="Árboles" />
 
         <Label Text="Número de cajas entregadas" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center" />
-        <Entry x:Name="CajasEntregadas" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" />
+        <Entry x:Name="CajasEntregadas" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" Placeholder="Cajas" />
 
         <Label Text="Precio kg vendido" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center"/>
-        <Entry x:Name="PrecioKgVendido" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" />
+        <Entry x:Name="PrecioKgVendido" BackgroundColor="Honeydew" Keyboard="Numeric" TextChanged="OnTextChanged" Placeholder="Kilogramos vendidos"/>
 
         <Label Text="Impuesto sobre Cosecha" WidthRequest="300" TextColor="Black" HorizontalTextAlignment="Center"/>
         <Entry x:Name="ImpuestoCosecha" BackgroundColor="Honeydew" Placeholder="Introduzca el porcentaje de su impuesto" Keyboard="Numeric" TextChanged="OnTextChanged" />
