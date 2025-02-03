@@ -23,17 +23,19 @@ public partial class ReportesPage : ContentPage
 
     private void EnviarCorreo(string titulo, string descripcion)
     {
-        var fromAddress = new MailAddress("yerayblanco@hotmail.com", "Yeray");
-        var toAddress = new MailAddress("yerayblanco@hotmail.com", "VillaToñiSL");
-        const string fromPassword = "Contraseña";
+        
+
+        var fromAddress = new MailAddress("yerayblanco21@gmail.com", "VillaToñiSL");
+        var toAddress = new MailAddress("ptrcastrojimenez@gmail.com", "Patricia");
+        const string fromPassword = "rotn iuga mpig vmyl"; ;
         string subject = "Reporte de Problema: " + titulo;
         string body = "Descripción del problema:\n" + descripcion;
 
         var smtp = new SmtpClient
         {
-            Host = "smtp.live.com",
+            Host = "smtp.gmail.com",
             Port = 587,
-            EnableSsl = true,
+            EnableSsl = true,  // Desactiva SSL
             DeliveryMethod = SmtpDeliveryMethod.Network,
             UseDefaultCredentials = false,
             Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
