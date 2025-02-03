@@ -52,10 +52,15 @@ public partial class ConfigurarAparienciaPage : ContentPage
                 break;
         }
 
+
+        ConfiguracionGlobal.BackgroundColor = backgroundColor;
+
         BotonGuardar.BackgroundColor = backgroundColor;
         CambiarImagen.BackgroundColor = backgroundColor;
         ButtonColorPicker.BackgroundColor = backgroundColor;
         FontSizeSlider.ThumbColor = backgroundColor;
         FontSizeSlider.MinimumTrackColor = backgroundColor;
+
+
     }
 }

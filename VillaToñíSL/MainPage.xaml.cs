@@ -1,4 +1,5 @@
-﻿using VillaToñíSL.Resources.Pages;
+﻿
+using VillaToñíSL.Resources.Pages;
 
 namespace VillaToñíSL
 {
@@ -58,6 +59,8 @@ namespace VillaToñíSL
         {
             await Navigation.PushAsync(new ClimaPage());
         }
+
+        
 
     }
 }

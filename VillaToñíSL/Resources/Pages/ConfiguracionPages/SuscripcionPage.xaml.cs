@@ -6,4 +6,13 @@ public partial class SuscripcionPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void suscribirse(object sender, EventArgs e)
+    {
+
+
+        //TODO: Implementar lógica de suscripción
+
+    }
+
 }

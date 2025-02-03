@@ -63,7 +63,7 @@
             AbsoluteLayout.LayoutBounds="0.7, 0.3, 275, 75"
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Clicked="SuscripcionPage"
-            IsEnabled="False"/>
+            IsEnabled="True"/>
 
         <Button Text="Admin Area"
             Style="{StaticResource HoverButtonStyle}"

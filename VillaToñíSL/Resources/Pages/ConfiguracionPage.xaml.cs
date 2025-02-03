@@ -2,6 +2,7 @@
 
 using VillaToñíSL.Resources.Pages.ConfiguracionPages;
 
+
 namespace VillaToñíSL.Resources.Pages;
 
 
@@ -10,7 +11,9 @@ public partial class ConfiguracionPage : ContentPage
 	public ConfiguracionPage()
 	{
 		InitializeComponent();
-	}
+        
+
+    }
 
     private async void ConfigurarApariencia(object sender, EventArgs e)
     {
@@ -46,5 +49,8 @@ public partial class ConfiguracionPage : ContentPage
     {
         await Navigation.PushAsync(new AdminAreaPage());
     }
+
+
+    
 
 }

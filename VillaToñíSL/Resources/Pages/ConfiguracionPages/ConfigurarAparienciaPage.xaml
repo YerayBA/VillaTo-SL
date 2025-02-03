@@ -28,7 +28,7 @@
                 </Picker.ItemsSource>
             </Picker>
 
-            <Button x:Name="BotonGuardar" Text="Guardar Cambios" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnSaveChangesClicked" WidthRequest="300" AutomationProperties.IsInAccessibleTree="True" />
+            <Button x:Name="BotonGuardar" Text="Aplicar Cambios" BackgroundColor="LightGreen" TextColor="Black" Clicked="OnSaveChangesClicked" WidthRequest="300" AutomationProperties.IsInAccessibleTree="True" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
