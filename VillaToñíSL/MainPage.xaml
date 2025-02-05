@@ -2,8 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VillaToñíSL.MainPage"
-             BackgroundColor="White"
-             Title="VillaToñiSL">
+             BackgroundColor="White">
 
     <ContentPage.Resources>
         <Style x:Key="HoverButtonStyle" TargetType="Button">
@@ -20,6 +19,16 @@
     </ContentPage.Resources>
 
     <AbsoluteLayout>
+        
+        <Button Text="{Binding Usuario}"
+              FontSize="18"
+              Style="{StaticResource HoverButtonStyle}"
+              TextColor="Black"
+              AbsoluteLayout.LayoutBounds="0.9, 0, 275, 75"
+              AbsoluteLayout.LayoutFlags="PositionProportional"
+              x:Name="lblUsuario"
+              Clicked="OnCerrarSesion"/>
+
         <Image Source="aguacate.png"
                Aspect="AspectFit"
                AbsoluteLayout.LayoutBounds="0.5, 0.5, 250, 250"
@@ -45,7 +54,7 @@
                 AbsoluteLayout.LayoutFlags="PositionProportional"
                 Clicked="OnInventarios"
                 IsEnabled="False"/>
-
+        
         <Button Text="Configuración"
                 Style="{StaticResource HoverButtonStyle}"
                 AbsoluteLayout.LayoutBounds="0.8, 0.5, 275, 75"

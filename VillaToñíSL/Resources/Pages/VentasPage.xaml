@@ -4,7 +4,7 @@
                 x:Class="VillaToñíSL.Resources.Pages.VentasPage"
                 xmlns:charts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui">
 
-    <VerticalStackLayout Padding="250" Spacing="20">
+    <VerticalStackLayout Padding="100" Spacing="20">
         <Label Text="Ventas Mensuales" FontSize="24" HorizontalOptions="Center" />
 
          

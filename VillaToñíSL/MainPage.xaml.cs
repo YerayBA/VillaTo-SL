@@ -10,6 +10,7 @@ namespace VillaToñíSL
         public MainPage()
         {
             InitializeComponent();
+            MostrarUsuario();
         }
 
         private async void OnGestiondeLotes(object sender, EventArgs e)
@@ -60,7 +61,23 @@ namespace VillaToñíSL
             await Navigation.PushAsync(new ClimaPage());
         }
 
-        
+        private void MostrarUsuario()
+        {
+            string usuario = Environment.UserName;
+            lblUsuario.Text = $"Bienvenido : {usuario}";
+        }
+
+        private async void OnCerrarSesion(object sender, EventArgs e)
+        {
+            bool aceptar =  await DisplayAlert("Cerrar Sesión", "¿Estás seguro de cerrar sesión?", "Aceptar", "Cancelar");
+
+            if (aceptar)
+
+                await Navigation.PushAsync(new LoginPage());
+
+            else return;
+
+        }
 
     }
 }
