@@ -2,12 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VillaToñíSL.MainPage"
-             BackgroundColor="White">
+             BackgroundImageSource="C:\Users\YerayPatricia\source\repos\VillaToñíSL\VillaToñíSL\Resources\Images\mainfondo.jpg">
 
     <ContentPage.Resources>
         <Style x:Key="HoverButtonStyle" TargetType="Button">
             <Setter Property="BackgroundColor" Value="LightGreen" />
             <Setter Property="TextColor" Value="Black" />
+            <Setter Property="Opacity" Value="0.6"/>
             <Setter Property="CornerRadius" Value="20" />
             <Style.Triggers>
                 <Trigger TargetType="Button" Property="IsPressed" Value="True">
